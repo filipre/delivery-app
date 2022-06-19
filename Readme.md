@@ -30,11 +30,11 @@ curl --location --request POST 'http://127.0.0.1:3000/shipment' \
 }'
 ```
 
-3. Visit http://127.0.0.1:3002/?track=$shipment_id with the correct shipment ID
+3. Visit http://127.0.0.1:3002/?track=SHIPMENT_ID with the correct shipment ID
 
-4. Because the shipment is not being delivered yet, we don't see it on the map. Change the status and the current location
+4. Because the shipment is not being delivered yet, we don't see it on the map. Change the status and the current location. Don't forget to replace `SHIPMENT_ID` with the correct ID.
 ```bash
-curl --location --request PATCH 'http://127.0.0.1:3000/shipment/$shipment_id' \
+curl --location --request PATCH 'http://127.0.0.1:3000/shipment/SHIPMENT_ID' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "status": "IN_DELIVERY",
@@ -46,7 +46,7 @@ curl --location --request PATCH 'http://127.0.0.1:3000/shipment/$shipment_id' \
 }'
 ```
 
-5. Every time you send a PATCH request, the marker should update shortly afterwards
+5. Every time you send a PATCH request with a new location, the marker should update shortly afterwards
 
 
 ## Current Architecture
