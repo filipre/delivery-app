@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "4fc93254-c634-4e12-be95-af7a4b3fb21e",
+		"name": "API Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /shipment/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/shipment/714e9835-c6cc-4c15-8fec-8be2249ac328",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"shipment",
+						"714e9835-c6cc-4c15-8fec-8be2249ac328"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /shipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"Goethestraße 105\",\n    \"customer\": \"2387647b-9c4f-4694-9498-cd19832e7cfb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/shipment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"shipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH /shipment/:id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"IN_DELIVERY\",\n    \"location\": {\n        \"lat\": 48.137154,\n        \"long\": 11.76124\n    },\n    \"location_history\": [],\n    \"status_history\": [],\n    \"rider\": \"Basti\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/shipment/0c7a73d2-e1cc-4a8b-a01d-b08e5fe8e45c",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"shipment",
+						"0c7a73d2-e1cc-4a8b-a01d-b08e5fe8e45c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

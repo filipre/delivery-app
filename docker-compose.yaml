@@ -1,0 +1,35 @@
+services:
+  frontend:
+    container_name: "delivery-frontend"
+    build: ./frontend
+    ports:
+      - "3002:3002"
+    depends_on:
+      - api-gateway
+
+  api-gateway:
+    container_name: "delivery-api-gateway"
+    build: ./api-gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - api-service
+
+  api-service:
+    container_name: "delivery-api-service"
+    build: ./api-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+
+  database:
+    image: "mongo"
+    container_name: "delivery-mongodb"
+    volumes:
+      - mongo-volume:/data/db
+    ports:
+      - "27017-27019:27017-27019"
+
+volumes:
+  mongo-volume: null
